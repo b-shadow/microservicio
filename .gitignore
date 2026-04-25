@@ -2,6 +2,7 @@
 .python-version
 .venv/
 venv/
+venv_vision/
 env/
 ENV/
 .env
