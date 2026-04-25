@@ -6,6 +6,7 @@ from loguru import logger
 
 from .core import settings, setup_logging, VisionServiceException
 from .api.routes import health, predict
+from .services import get_inference_engine
 
 # Configurar logging
 logger.remove()
@@ -20,6 +21,9 @@ async def lifespan(app: FastAPI):
     logger.info(f"Ambiente: {settings.app_env}")
     logger.info(f"Modo: {settings.model_provider}")
     logger.info(f"Escuchando en {settings.host}:{settings.port}")
+    # Precargar motor/modelo para evitar timeout en el primer request de predicción
+    get_inference_engine()
+    logger.info("Motor de inferencia precargado")
     yield
     # Shutdown
     logger.info("Apagando servicio")
