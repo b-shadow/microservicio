@@ -1,0 +1,16 @@
+# Dependencias para entrenamiento
+torch==2.0.1
+torchvision==0.15.2
+fastai==2.7.12
+pillow>=9.0.0
+numpy>=1.22.0
+pandas>=1.4.0
+scikit-learn>=1.0.0
+matplotlib>=3.5.0
+tqdm>=4.62.0
+jupyter>=1.0.0
+ipywidgets>=7.6.0
+
+# Opcional: Para descargar datos
+bing-image-downloader>=1.1.0
+kaggle>=1.5.12
